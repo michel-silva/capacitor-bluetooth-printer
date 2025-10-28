@@ -100,6 +100,17 @@ public class BluetoothPrinter {
         }
     }
 
+    public void printBase64(String data) throws RuntimeException {
+        try {
+            OutputStream stream = mBluetoothSocket.getOutputStream();
+            byte[] bytes = Base64.decode(data, Base64.DEFAULT);
+            stream.write(bytes);            
+            stream.flush();
+        } catch (Exception e) {
+            throw new RuntimeException("Could not print", e);
+        }
+    }
+
     public void disconnect() throws RuntimeException {
         try {
             mBluetoothSocket.close();

@@ -18,13 +18,13 @@ npx cap sync
 * [`list()`](#list)
 * [`connect(...)`](#connect)
 * [`print(...)`](#print)
+* [printBase64(...)](#printbase64)
 * [`disconnect()`](#disconnect)
 * [`connectAndPrint(...)`](#connectandprint)
 * [Type Aliases](#type-aliases)
 * [Enums](#enums)
 
 </docgen-index>
-
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
@@ -56,6 +56,18 @@ connect(options: { address: string; }) => Promise<void>
 
 ```typescript
 print(options: { data: string; }) => Promise<void>
+```
+
+| Param         | Type                           |
+| ------------- | ------------------------------ |
+| **`options`** | <code>{ data: string; }</code> |
+
+--------------------
+
+### printBase64(...)
+
+```typescript
+printBase64(options: { data: string; }) => Promise<void>
 ```
 
 | Param         | Type                           |

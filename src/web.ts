@@ -26,4 +26,8 @@ export class BluetoothPrinterWeb
     throw this.unimplemented('Not implemented on web.');
   }
 
+  printBase64(): Promise<void> {
+    throw this.unimplemented('Not implemented on web.');
+  }
+
 }

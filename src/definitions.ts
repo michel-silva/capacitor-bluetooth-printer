@@ -4,6 +4,7 @@ export interface BluetoothPrinterPlugin {
   list(): Promise<{ devices: BluetoothDevice[] }>;
   connect(options: { address: string }): Promise<void>;
   print(options: { data: string }): Promise<void>;
+  printBase64(options: { data: string }): Promise<void>;
   disconnect(): Promise<void>;
 
   connectAndPrint(options: { address: string, data: string }): Promise<void>;
