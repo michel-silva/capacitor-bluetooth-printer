@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.util.Log;
+import android.util.Base64;
 
 import androidx.core.app.ActivityCompat;
 
@@ -94,6 +95,17 @@ public class BluetoothPrinter {
         try {
             OutputStream stream = mBluetoothSocket.getOutputStream();
             stream.write(data.getBytes());
+            stream.flush();
+        } catch (Exception e) {
+            throw new RuntimeException("Could not print", e);
+        }
+    }
+
+    public void printBase64(String data) throws RuntimeException {
+        try {
+            OutputStream stream = mBluetoothSocket.getOutputStream();
+            byte[] bytes = Base64.decode(data, Base64.DEFAULT);
+            stream.write(bytes);            
             stream.flush();
         } catch (Exception e) {
             throw new RuntimeException("Could not print", e);

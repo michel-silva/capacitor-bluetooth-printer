@@ -46,6 +46,17 @@ public class BluetoothPrinterPlugin extends Plugin {
     }
 
     @PluginMethod
+    public void printBase64(PluginCall call) {
+        try {
+            String data = call.getString("data");
+            implementation.printBase64(data);
+            call.resolve();
+        } catch (RuntimeException e) {
+            call.reject(e.getMessage(), e);
+        }
+    }
+
+    @PluginMethod
     public void disconnect(PluginCall call) {
         try {
             implementation.disconnect();
