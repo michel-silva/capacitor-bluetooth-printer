@@ -18,7 +18,7 @@ npx cap sync
 * [`list()`](#list)
 * [`connect(...)`](#connect)
 * [`print(...)`](#print)
-* [printBase64(...)](#printbase64)
+* [`printBase64(...)`](#printbase64)
 * [`disconnect()`](#disconnect)
 * [`connectAndPrint(...)`](#connectandprint)
 * [Type Aliases](#type-aliases)
@@ -63,6 +63,7 @@ print(options: { data: string; }) => Promise<void>
 | **`options`** | <code>{ data: string; }</code> |
 
 --------------------
+
 
 ### printBase64(...)
 
